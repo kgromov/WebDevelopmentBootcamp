@@ -1,0 +1,26 @@
+/* Challenge: absolute postion in diagonal */
+div {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: absolute;
+}
+
+.red {  
+    background-color: red;    
+    left: 200px;  
+    top: 200px;
+  }
+  
+  .blue {
+     background-color: blue;
+     left: 100px;
+     top: 100px;
+  }
+  
+  .yellow {
+     background-color: yellow;
+    /* Alternatively - body {margin: 0} */
+     left: 0;  
+     top: 0;
+  }

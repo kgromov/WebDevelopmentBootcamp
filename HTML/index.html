@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Konstanin personal site</title>
+</head>
+<body>  
+    <table cellspacing="10">
+        <td><img src="resources/images/konstantin-profile.jpg" alt="Konstantin profile picture"></td>
+        <td>
+            <h1>Konstantin Gromov</h1>
+            <p><em>Middle fullstack developer at <strong>EG</strong></em></p>
+            <p>I ♥ travelling, gym and reading books</p>
+        </td>
+    </table>
+    <hr> 
+    <h3>Working experience</h3>
+    <table cellspacing="10">
+        <thead>
+            <th>Dates</th>
+            <th>Details</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2011 - 2014</td>
+                <td>Automation engenier (Juniour => Middle) at Lohika, G11N</td>
+            </tr>
+            <tr>
+                <td>2014 - 2016</td>
+                <td>Automation engenier (Middle => Senior) at Ciklum, REVI/PX</td>
+            </tr>
+             <tr>
+                <td>2017 - 2019</td>
+                <td>Senior Automation engenier at Luxoft, Akela</td>
+            </tr>
+            <tr>
+                <td>2019 - 2020</td>
+                <td>Middle Java Developer at Luxoft, Akela</td>
+            </tr>
+            <tr>
+                <td>2020 - </td>
+                <td>Middle Fullstack Java Developer/SCRUM master at EG</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3>Skills <br></h3> 
+    <!-- New approach with grid layout 
+    <div class="skills">
+        <div class="skill">
+            <p>Java</p>
+            <p class="rate">☆☆☆☆☆</p>
+        </div>
+        <div class="skill">
+            <p>Performance</p>
+            <p class="rate">☆☆☆☆</p>
+        </div>
+        <div class="skill">
+            <p>Spring</p>
+            <p class="rate">☆☆☆☆</p>
+        </div>
+        <div class="skill">
+            <p>Gym</p>
+            <p class="rate">☆☆☆</p>
+        </div>
+    </div>
+    -->
+    <!-- Old approach with nested table -->  
+    <table cellspacing="10">           
+        <tbody>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Java</td>
+                            <td class="rate">☆☆☆☆☆</td>
+                        </tr>
+                        <tr>
+                            <td>Performance</td>
+                            <td class="rate">☆☆☆☆</td>
+                        </tr>
+                    </table>
+                </td>     
+                <td>
+                    <table>
+                        <tr>
+                            <td>Spring</td>
+                            <td class="rate">☆☆☆☆</td>
+                        </tr>
+                        <tr>
+                            <td>Gym</td>
+                            <td class="rate">☆☆☆</td>
+                        </tr>
+                    </table>
+               </td>              
+            </tr> 
+        </tbody>
+    </table>      
+    <hr>
+    <nav>
+        <a href="contact-me.html">Contact details</a>
+        <a href="hobbies.html">My hobbies</a>
+    </nav>  
+</body>
+</html>

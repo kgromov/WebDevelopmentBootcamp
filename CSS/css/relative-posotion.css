@@ -1,0 +1,22 @@
+/* Challenge rwlative positions in a row */
+div {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: relative;
+}
+
+.red {  
+    background-color: red;    
+    left: 200px;    
+  }
+  
+  .blue {
+     background-color: blue;
+     right: 100px;
+  }
+  
+  .yellow {
+     background-color: yellow;
+     right: 100px;
+  }

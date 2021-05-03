@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Contact Me</title>
+</head>
+<body>
+    <h1>My Contact Details</h1>
+    <div>
+        <p>25 Inglezt st.</p>
+        <p>rocky89@ukr.net</p>
+        <p>(063)044-64-91</p>
+    </div>
+    <hr>
+    <form id="contactForm" action="mailto:rocky89@ukr.net" method="POST" enctype="text/plain">
+        <label for="firstName">Name:</label>
+        <input type="text" name="firstName" placeholder="Type your name" maxlength="10"><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Type your name"><br>
+        <label for="birthdate">Date of Birth:</label>
+        <input type="date" name="birthdate" pattern="dd/mm/yyyy"><br>
+        <label for="message">Message:</label><br>
+        <textarea name="message" cols="30" rows="4"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

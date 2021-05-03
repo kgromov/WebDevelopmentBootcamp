@@ -1,0 +1,23 @@
+.rate {
+    color: yellow;
+    padding-left: 2;
+}
+
+#contactForm *{
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.skills {
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.75rem;
+    grid-auto-columns: minmax(100px, auto);
+}
+
+.skill > p {
+    display: inline-block;
+    margin-right: 10px;
+    /* width: 400px; */
+}
