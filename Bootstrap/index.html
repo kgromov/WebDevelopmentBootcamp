@@ -4,45 +4,89 @@
 <head>
   <meta charset="utf-8">
   <title>TinDog</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Montserrat" rel="stylesheet">  
+  <!-- Font Awesome  -->
+  <script defer src="https://use.fontawesome.com/releases/v5.10.0/js/all.js"></script>
+  <!-- <link href="https://use.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
 </head>
 
 <body>
-
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
   <section id="title">
-
-    <!-- Nav Bar -->
-
-
-
-
-    <!-- Title -->
-
-    <div>
-      <h1>Meet new and interesting dogs nearby.</h1>
-      <button type="button">Download</button>
-      <button type="button">Download</button>
+    <div class="container-fluid">
+      <!-- Nav Bar -->   
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="">tindog</a>
+         <button class="navbar-toggler" type="button" 
+                data-toggle="collapse" data-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="">Pricing</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="">Download</a>
+              </li>
+          </ul>
+      </div>
+      </nav>
+        <!-- Title -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>Meet new and interesting dogs nearby.</h1>
+          <button type="button" class="btn btn-dark btn-lg download-button">
+            <i class="fab fa-apple"></i> Download</button>
+          <button type="button" class="btn btn-outline-light btn-lg download-button">
+            <i class="fab fa-google-play"></i> Download</button>
+        </div>
+        <div class="col-lg-6">
+          <img class="iphone-mockup" src="images/iphone6.png" alt="iphone-mockup">
+        </div>
+      </div>
     </div>
-    <div>
-      <img src="images/iphone6.png" alt="iphone-mockup">
-    </div>
-
   </section>
 
 
   <!-- Features -->
-
   <section id="features">
-
-    <h3>Easy to use.</h3>
-    <p>So easy to use, even your dog could do it.</p>
-
-    <h3>Elite Clientele</h3>
-    <p>We have all the dogs, the greatest dogs.</p>
-
-    <h3>Guaranteed to work.</h3>
-    <p>Find the love of your dog's life or your money back.</p>
-
+    <div class="container-fluid">     
+      <div class="row">       
+        <div class="col-lg-4 col-md-12">  
+          <i class="fas fa-check-circle fa-4x feature-icon"></i> 
+          <h3 class="feature-title">Easy to use.</h3>        
+          <p class="feature-desc">So easy to use, even your dog could do it.</p>
+        </div>
+      
+        <div class="col-lg-4 col-md-12">
+          <i class="fas fa-bullseye fa-4x feature-icon"></i>          
+          <h3 class="feature-title">Elite Clientele</h3>          
+          <p class="feature-desc">We have all the dogs, the greatest dogs.</p>
+        </div>
+          
+        <div class="col-lg-4 col-md-12">
+          <i class="fas fa-heart fa-4x feature-icon"></i>          
+          <h3 class="feature-title">Guaranteed to work.</h3>          
+          <p class="feature-desc">Find the love of your dog's life or your money back.</p>
+        </div>          
+      </div>     
+    </div>
   </section>
 
 
