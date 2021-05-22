@@ -10,7 +10,7 @@ function attempt() {
 
 function updateHeader(p1, p2) {   
     const result = p1.score - p2.score;
-    let headerText = 'Refresh Me';
+    let headerText = 'Draw!';
     if (result > 0) {
         document.querySelector('h1').innerHTML = winnerMark + ' Player 1 Wins!'; 
     } else if (result < 0) {
