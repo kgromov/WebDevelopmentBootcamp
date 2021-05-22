@@ -1,18 +1,15 @@
-const drums = document.querySelectorAll('.drum');
-drums.forEach(drum => 
-    drum.addEventListener('click', function () {
+$('.drum').click(function () {
         let buttonInnerHtml = this.innerHTML;
         playSound(buttonInnerHtml);
         addAnimationEffect(buttonInnerHtml);
-    })
-);
+});
 
 
-document.addEventListener('keypress', (e => {
+$('body').keypress(e => {
     const keyCode = e.key;
     playSound(keyCode);
     addAnimationEffect(keyCode);
-}));
+});
 
 function playSound(keyCode) {
     switch(keyCode) {
@@ -35,7 +32,7 @@ function playSound(keyCode) {
             new Audio('sounds/crash.mp3').play();
             break;
         case 'l':
-            new Audio('sounds/kick.mp3').play();
+            new Audio('sounds/kick-bass.mp3').play();
            break;
         default:
             console.error(`Not specified button ${keyCode} waas pressed`);
@@ -43,10 +40,10 @@ function playSound(keyCode) {
 }
 
 function addAnimationEffect(keyCode) {
-    const activeButton = document.querySelector(`.${keyCode}`);
+    const activeButton = $(`.${keyCode}`);
     console.log(activeButton);
-    activeButton.classList.add('pressed');
+    activeButton.addClass('pressed');
     setTimeout(() => {
-        activeButton.classList.remove('pressed');
+        activeButton.removeClass('pressed');
     }, 100);
 }
