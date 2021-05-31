@@ -3,13 +3,14 @@ let level = 0;
 const buttonColors = ['green', 'red', 'yellow', 'blue'];
 let nextColor = '';
 
-document.addEventListener('keypress', (e => { 
+$('body').keypress(e => { 
+    console.log('Pressed: ', e.key, ', isGameStarted = ', isGameStarted);
     if (!isGameStarted) {
-        isGameStarted = true;
-        $('.container').removeClass('game-over');
-       
+        isGameStarted = true;  
+        nextLevel();    
     }
-}));
+    console.log('isGameStarted = ', isGameStarted);   
+});
 
 $('div.btn').click(function () {
     if (!isGameStarted) {
@@ -19,19 +20,23 @@ $('div.btn').click(function () {
     playSound(buttonId);
     addAnimationEffect(buttonId);
     if (buttonId === nextColor) {
-        level++;  
-        nextSequence();
+        setTimeout(() => { nextLevel()}, 100);
     } else {
         fail();
     }
 });
 
 function nextSequence() {
+    console.log('nextSequence');
     bthIndex = Math.floor(Math.random() * buttonColors.length);
     nextColor = buttonColors[bthIndex];
+    console.log('nextColor = ', nextColor);
+    playSound(nextColor);
+    addAnimationEffect(nextColor);
 }
 
 function nextLevel() {
+    console.log('nextLevel');
     level++;  
     $('#level-title').text(`Level ${level}`);
     nextSequence();
@@ -39,9 +44,14 @@ function nextLevel() {
 
 function fail() {
     playSound('wrong');
-    $('.container').addClass('game-over');
+    let container = $('.container');
+    container.addClass('game-over');
     $('#level-title').text('Game Over, Press Any Key to Restart');
+    setTimeout(() => {
+        container.removeClass('game-over');
+    }, 100);
     isGameStarted = false;
+    level = 0;
 }
 
 function playSound(buttonId) {
@@ -49,7 +59,8 @@ function playSound(buttonId) {
 }
 
 function addAnimationEffect(buttonId) {
-    const activeButton = $('#buttonId');
+    const activeButton = $(`#${buttonId}`);
+    console.log(activeButton.html());
     activeButton.addClass('pressed');
     setTimeout(() => {
         activeButton.removeClass('pressed');
