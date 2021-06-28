@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const ejs = require("ejs");
+// const ejs = require("ejs");
+const mongoose = require("mongoose");
 const stringUtils = require("lodash");
 
 const homeStartingContent = "Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
@@ -12,11 +13,24 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("resources"));
 
-const posts = [];
+mongoose.connect('mongodb://localhost:27017/webDevBootcamp', {useNewUrlParser: true, useUnifiedTopology: true});
 
+const postSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  body: String,
+});
+
+const Post = mongoose.model('Post', postSchema);
 
 app.get("/", (req, res) => {
-  res.render("home", {content: homeStartingContent, posts: posts});
+  Post.find((err, posts) => {
+    if (!err) {
+      res.render("home", {content: homeStartingContent, posts: posts});
+    }    
+  })  
 });
 
 app.get("/contact", (req, res) => {
@@ -33,18 +47,21 @@ app.get("/compose", (req, res) => {
 
 app.post("/compose", (req, res) => {
   const body = req.body;
-  const post = {
-    title: body.postTitle,
-    body: body.postBody
-  };
-  posts.push(post);  
-  res.redirect("/");
+  const newPost = new Post({title: body.postTitle, body: body.postBody});
+  newPost.save(err => {
+    if (!err) {
+      res.redirect("/");
+    }
+  });  
 });
 
 app.get("/posts/:postId", (req, res) => {
-  const postId = stringUtils.lowerCase(req.params.postId);
-  const post = posts.find(p => stringUtils.lowerCase(p.title) === postId);
-  res.render("post", {post: post});
+  const postId = req.params.postId;
+  Post.findById(postId, (err, post) => {
+    if(!err) {
+      res.render("post", {post: post});
+    }
+  });  
 });
 
 
