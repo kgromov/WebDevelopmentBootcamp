@@ -10,7 +10,14 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("resources"));
 
-mongoose.connect('mongodb://localhost:27017/todoList', {useNewUrlParser: true, useUnifiedTopology: true});
+// local - aka dev
+const localUrl = 'mongodb://localhost:27017/todoList';
+// cluster - aka prod
+const dbUser = 'admin';
+const dbPassword;
+const clusterUrl = `mongodb+srv://${dbUser}:${dbPassword}@cluster0.kxhtq.mongodb.net/todoList`;
+
+mongoose.connect(clusterUrl, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const defaultItemsText = ['Welcome to your todoList!', 
                       'Hit + to add new item', 
